@@ -11,16 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/tachyons.min.css">
     <link rel="stylesheet" href="css/vhs.css">
+    <script src="js/p5.min.js"></script>
+
   </head>
 <style>
+.sketch1 {
+display: flex;
+margin:0;
+justify-content: center;
+}
 </style>
   <body class="dark-gray bg-light-yellow">
-    <script type="text/javascript" src="js/smoothscroll.js" charset="utf-8"></script>
-
-
   <nav class="f6 fw6 bg-dark-gray ttu tracked dt w-100 border-box pa3 ph5-ns">
-    <span class="dtc v-mid w-50 w-25-ns br-100"> </span>
-    <div class="dtc v-mid w-50 w-75-ns tr">
+    <span class="dtc v-mid w-0 w-25-ns br-100"> </span>
+    <div class="dtc v-mid w-100 w-75-ns tr">
     <a class="link dim light-yellow dib mr3" href="#BV" title="BV">BV</a>
     <a class="link dim light-yellow dib mr3" href="#Examples" title="Examples">Examples</a>
     <a class="link dim light-yellow dib mr3" href="#FAQ" title="FAQ">FAQ</a>
@@ -28,13 +32,15 @@
     </div>
   </nav>
 
-    <article class="pa3 pa4-ns pb5-ns">
-
+    <article class="cf ph3 pa2 pv5 pa1-ns ph5-ns pb5-ns">
+  <header class="fn fl-ns w-50-ns pr4-ns">
       <!-- livereload ~/badviz -p 8000 -->
         <a name="BV"></a>
-        <h1 class="f2 f-subheadline-ns mb4 tracked"><span class="vhs-flicker vhs-delay-3">BAD</span> <span class="tracked-mega">VIZ</span></h1>
-        <h2 class="f4 f3-ns measure lh-copy">Self-Contained. Open-Source. Made For You.</h2>
-
+        <h1 class="f2 f-headline-ns mb2 tracked"><span class="vhs-flicker vhs-delay-3">BAD</span> <span class="tracked-mega">VIZ</span></h1>
+        <h2 class="f4 f3-ns measure pl3-ns lh-copy">Self-Contained. Open-Source. All-You.</h2>
+  </header>
+  <div class="fn fl-ns w-50-ns pt5-ns mt3-ns">
+        <div id="sketch1" class="sketch1"></div>
 <p class="f4 f3-ns measure lh-copy">Get customized, interactive visuals all in one box.<br>
 Simple to use, stable, and built specifically for your project.<br><br><br>
 
@@ -81,11 +87,50 @@ BFD provides visual programming, artistic collaboration, and technical support. 
 <a name="Contact"></a><strong>I Want One!</strong><br>
 <br>
 Let's make it happen. (E-mail us.)</p>
+</div>
 </article>
-      <!--</div>
-    </div> -->
-    <footer>
-      <!--This is footer content!!!-->
-    </footer>
+<nav class="f6 fw6 bg-dark-gray ttu tracked dt w-100 border-box pa3 ph5-ns">
+  <div class="dtc v-mid w-100 w-25-ns tl">
+  <a class="link dim light-yellow dib mr3" href="#BV" title="BV">BV</a>
+  <a class="link dim light-yellow dib mr3" href="#Examples" title="Examples">Examples</a>
+  <a class="link dim light-yellow dib mr3" href="#FAQ" title="FAQ">FAQ</a>
+  <a class="link dim light-yellow dib" href="#Contact" title="Contact">Contact</a>
+    <span class="dtc v-mid w-0 w-75-ns br-100"> </span>
+  </div>
+</nav>
+
+<script>
+
+var s = function( p ) {
+
+  p.setup = function() {
+    p.createCanvas(150, 150);
+  };
+//var xx = 10 + second();
+  p.draw = function() {
+    p.background('#fbf1a9');
+    p.noFill();
+    p.ellipse(75,75,60,50);
+
+  };
+};
+
+var myp5 = new p5(s, 'sketch1');
+
+/*
+new p5();
+
+function setup() {
+    specc = createCanvas(100, 100);
+      specc.parent('sketch1');
+}
+
+function draw() {
+  var boop = random(100);
+    background(255, 0, boop);
+}
+*/
+</script>
+
   </body>
 </html>
