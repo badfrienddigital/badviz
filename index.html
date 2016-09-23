@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/tachyons.min.css">
     <link rel="stylesheet" href="css/vhs.css">
-    <script src="js/p5.min.js"></script>
+
 
   </head>
 <style>
@@ -19,6 +19,10 @@
 display: flex;
 margin:0;
 justify-content: center;
+}
+.hide {
+
+  visibility: hidden;
 }
 </style>
   <body class="dark-gray bg-light-yellow">
@@ -40,7 +44,16 @@ justify-content: center;
         <h2 class="f4 f3-ns measure pl3-ns lh-copy">Self-Contained. Open-Source. All-You.</h2>
   </header>
   <div class="fn fl-ns w-50-ns pt5-ns mt3-ns">
-        <div id="sketch1" class="sketch1"></div>
+        <div id="sketch1" class="sketch1">
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 64 64'
+            width='100%' height='300'
+            fill='currentcolor'>
+            <path id="wavyA" d='M62 32 L2 32 L8 28 L20 16 L32 58 L44 16 L56 28 Z' />
+            <path id="wavyB" d='M62 32 L2 32 L8 16 L20 48 L32 36 L44 48 L56 16 Z' /> -->
+          </svg>
+        </div>
 <p class="f4 f3-ns measure lh-copy">Get customized, interactive visuals all in one box.<br>
 Simple to use, stable, and built specifically for your project.<br><br><br>
 
@@ -98,39 +111,6 @@ Let's make it happen. (E-mail us.)</p>
     <span class="dtc v-mid w-0 w-75-ns br-100"> </span>
   </div>
 </nav>
-
-<script>
-
-var s = function( p ) {
-
-  p.setup = function() {
-    p.createCanvas(150, 150);
-  };
-//var xx = 10 + second();
-  p.draw = function() {
-    p.background('#fbf1a9');
-    p.noFill();
-    p.ellipse(75,75,60,50);
-
-  };
-};
-
-var myp5 = new p5(s, 'sketch1');
-
-/*
-new p5();
-
-function setup() {
-    specc = createCanvas(100, 100);
-      specc.parent('sketch1');
-}
-
-function draw() {
-  var boop = random(100);
-    background(255, 0, boop);
-}
-*/
-</script>
 
   </body>
 </html>

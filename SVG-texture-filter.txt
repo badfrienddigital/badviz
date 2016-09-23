@@ -1,0 +1,37 @@
+Give texture to an SVG
+
+
+
+
+<div class="container">
+  <svg class="icon-svg icon-svg--bolt" viewBox="0 0 24 24" width="96" height="96" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="the-object">
+        <path fill="currentColor" d="M 12 3
+             v 7
+             h 6
+             l -6 11
+             v -7
+             h -6
+             l 6 -11">
+    </path>
+      </clipPath>
+      <filter id="noise">
+      	  <feTurbulence type="fractalNoise" baseFrequency="30" result="noisy" />
+	        <feColorMatrix type="saturate" values="0"/>
+        <feBlend in="SourceGraphic" in2="noisy" mode="multiply" />
+      </filter>
+      
+    </defs>
+    <g>
+    <path filter="url(#noise)" clip-path="url(#the-object)" fill="currentColor" d="M 12 3
+             v 7
+             h 6
+             l -6 11
+             v -7
+             h -6
+             l 6 -11">
+    </path>
+    </g>
+  </svg>
+</div>
