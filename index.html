@@ -18,42 +18,41 @@
 
 @media only screen and (min-width: 60em) {
 .cont1{
-  width: 40vw;
-  height: 40vw;
+
 }
 .sketch1{
-  margin-left: 8.5vw;
+  /*margin-left: 8.5vw;*/
   width: 35vw;
   height: 35vw;
+  margin-bottom:-10vw;
 }
 .vizzy{
-  padding-top: 35%;
-  padding-left: 26.5%;
+  padding-top: 5%;
+  padding-left: 27%;
   font-size: 1.5em;
 }
 .sketch1:hover > .vizzy, .sketch1:focus > .vizzy {
   padding-left: 29%;
-  padding-top: 34%;
 }
 }
 @media only screen and (min-width: 30em) and (max-width: 60em) {
   .cont1{
     width: 40vw;
-    height: 25vh;
+    height: 25vw;
   }
   .sketch1{
-    margin-left: 4vw;
+    /*margin-left: 4vw;*/
     width: 50vw;
     height: 50vw;
   }
   .vizzy{
-    padding-top: 35%;
-    padding-left: 26.5%;
+    /*padding-top: 35%;
+    padding-left: 26.5%;*/
     font-size: 1.5em;
   }
   .sketch1:hover > .vizzy, .sketch1:focus > .vizzy {
-    padding-left: 28.5%;
-    padding-top: 34%;
+    /*padding-left: 28.5%;
+    padding-top: 34%;*/
   }
 }
 
@@ -61,61 +60,65 @@
   .cont1{  width: 100vw;
     height: 35vh;}
   .sketch1{
-    margin-left: 20vw;
+    /*margin-left: 20vw;*/
     width: 80vw;
     height: 80vw;
   }
   .vizzy{
-    padding-top: 35%;
-    padding-left: 25.5%;
+    /*padding-top: 35%;
+    padding-left: 25.5%;*/
     font-size: 1em;
   }
   .sketch1:hover > .vizzy, .sketch1:focus > .vizzy {
-    padding-left: 29.2%;
-    padding-top: 34%;
+    /*padding-left: 29.2%;
+    padding-top: 34%;*/
   }
 }
 
 
 
 .cont1 {
-
   padding: 0;
   border: 0;
-  margin:0;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	            -ms-grid-row-align: center;
-	        align-items: center;
-  position: relative;
+  margin:0 auto;
+  display:table;
   overflow: hidden;
+  position:relative;
+  width: 100%;
 }
 
 .sketch1 {
-
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  display:inline-block;
+
   -webkit-clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 20% 16%, 32% 58%, 44% 16%, 56% 28%);
-          clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 20% 16%, 32% 58%, 44% 16%, 56% 28%);
+           clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 20% 16%, 32% 58%, 44% 16%, 56% 28%);
+        /*-webkit-clip-path: url("#wavy11");*/
+          clip-path: url("#wavy11");
+
+          vertical-align:middle;
+  margin-left:auto;
   background: currentcolor;
   -webkit-transition: all 2s ease;
   transition: all 2s ease;
+
+      overflow: hidden;
+      padding: 0;
+      border: 0;
+      margin-top: 0;
 }
 
 .sketch1:hover, .sketch1:focus {
   -webkit-clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);
-          clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);
+          /*clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);*/
   background: #19a974;
 }
 
 .vizzy {
-  cursor: default;
-  opacity:0;
+
   color: #fbf1a9;
+  cursor: default;
+    opacity:0;
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
   -moz-osx-font-smoothing: grayscale;
@@ -130,7 +133,6 @@
 -webkit-transform: scale(1.15);
         transform: scale(1.15);
 }
-
 
 
 </style>
@@ -154,7 +156,18 @@
   </header>
   <div class="fn fl-ns w-50-ns pt1-ns mt3-ns">
         <div class="cont1">
-        <div class="sketch1 vizzy1">
+        <div id="sketch11" class="sketch1 vizzy1">
+          <svg class="clip-svg">
+              <defs>
+                  <clipPath id="wavy11" clipPathUnits="objectBoundingBox">
+                      <polygon id="wavy1" points=".62 .32, .02 .32, .08 .28, .20 .16, .32 .58, .44 .16, .56 .28" />
+                      <animate xlink:href="#wavy1" begin="sketch11.mouseover" attributeName="points" to=".62 .32, .02 .32, .08 .28, .10 .16, .32 .58, .54 .16, .56 .28" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                      <animate xlink:href="#wavy1" begin="sketch11.mouseout" attributeName="points" to=".62 .32, .02 .32, .08 .28, .20 .16, .32 .58, .44 .16, .56 .28" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                      <animate xlink:href="#wavy1" begin="sketch11.focusin" attributeName="points" to=".62 .32, .02 .32, .08 .28, .10 .16, .32 .58, .54 .16, .56 .28" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                      <animate xlink:href="#wavy1" begin="sketch11.focusout" attributeName="points" to=".62 .32, .02 .32, .08 .28, .20 .16, .32 .58, .44 .16, .56 .28" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                  </clipPath>
+              </defs>
+          </svg>
           <div class="vizzy tracked">VIZ</div>
         </div>
        </div>
