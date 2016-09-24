@@ -64,15 +64,15 @@ margin-top: auto;
           transform: translateZ(0);
 
   -webkit-clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 31% 16%, 31.5% 25%, 32% 16%, 56% 28%);
-           clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 31% 16%, 31.5% 25%, 32% 16%, 56% 28%);
+        /*   clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 31% 16%, 31.5% 25%, 32% 16%, 56% 28%); */
         /*-webkit-clip-path: url("#wavy11");*/
           clip-path: url("#wavy11");
 
 
   background: #333;
   background-image: #333;
-  -webkit-transition: all 2s ease;
-  transition: all 2s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 
       overflow: hidden;
       padding: 0;
@@ -87,13 +87,9 @@ margin-top: auto;
           transform: translateZ(0);
   -webkit-clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);
           /*clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);*/
-          background: #e7040f;
-          background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjEwIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KPC9maWx0ZXI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuMyI+PC9yZWN0Pgo8L3N2Zz4=");
+          background: #00449e;
         -webkit-transition: all 1s ease;
         transition: all 1s ease;
-
-        -webkit-animation: rad1 2s ease-in-out 2s infinite;
-        animation: rad12 2s ease-in-out 2s infinite;
 }
 
 .grad {
@@ -103,28 +99,30 @@ margin-top: auto;
   left:0;
   top:auto;
   opacity: 0;
-  background: linear-gradient(180deg, #00449e, #96ccff);
-  -webkit-transition: all 2s ease;
-  transition: all 2s ease;
+  background: linear-gradient(180deg, #00449e, #96ccff, #ffffff);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 
 }
 
 .sketch1:hover > .grad, .sketch1:focus > .grad {
--webkit-animation: grad1 2s ease-in-out infinite;
-animation: grad12 2s ease-in-out infinite;
+-webkit-animation: grad1 1.5s ease-in-out 0.5s infinite;
+animation: grad12 1.5s ease-in-out 0.5s infinite;
+
 }
 
 
   @-webkit-keyframes grad1 {
-      0%, 100% {opacity:0.3}
+      0%, 100% {opacity:0}
       50% {opacity:1}
   }
 
   @keyframes grad12 {
-      0%, 100% {opacity:0.3}
+      0%, 100% {opacity:0}
       50% {opacity:1}
   }
 
+/*
   @-webkit-keyframes rad1 {
       0%, 100% {opacity:1}
       50% {opacity:.7}
@@ -133,7 +131,7 @@ animation: grad12 2s ease-in-out infinite;
   @keyframes rad12 {
       0%, 100% {opacity:1}
       50% {opacity:.7}
-  }
+  }*/
 
 
 </style>
@@ -208,11 +206,9 @@ The program it runs can work with a standard USB keyboard, a MIDI device, an X B
 <br>
 Sure!<br>
 <br>
-Every component is open source. If you have the spare time and the desire to learn, go for it!<br>
+Every component is open source. If you have the spare time and the desire to code, go for it!<br>
 <br>
-Of course, you can also record yourself, distribute yourself, manage yourself, book yourself, promote yourself, and pretty much tackle any other aspect of a creative career on your own too. If you actually want to focus on making music, doing everything on your own may not be the best use of your time.<br>
-<br>
-BFD provides visual programming, artistic collaboration, and technical support. Frankly, we just want to make cool stuff together.<br>
+If not, BFD provides visual programming, artistic collaboration, and technical support. Mostly, we just want to make cool stuff together.<br>
 <br>
 <a name="Contact"></a><strong>I Want One!</strong><br>
 <br>
