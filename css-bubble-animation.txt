@@ -1,0 +1,58 @@
+css bubble
+
+
+
+<section>
+  <div class="fig fig2"></div>
+  <div class="fig fig3"></div>
+</section>
+
+
+--
+.fig {
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+section {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.fig2 {
+  margin-right:40px;
+  margin-bottom:80px;
+  background: black;
+  -webkit-animation: eye 1.8s ease-in-out infinite alternate;
+          animation: eye 1.8s ease-in-out infinite alternate;
+}
+
+.fig3 {
+  background: black;
+  margin-left:100px;
+  margin-top:105px;
+  -webkit-animation: eye 1.7s ease-in-out infinite alternate;
+          animation: eye 1.7s ease-in-out infinite alternate;
+}
+
+@keyframes eye {
+  0%, 100% {
+    -webkit-clip-path: ellipse(40% 38% at 50% 50%);
+            clip-path: ellipse(40% 38% at 50% 50%);
+  }
+  50% {
+    -webkit-clip-path: ellipse(32% 30% at 50% 50%);
+            clip-path: ellipse(32% 30% at 50% 50%);
+  }
+}

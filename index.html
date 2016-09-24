@@ -83,15 +83,21 @@
   padding: 0;
   border: 0;
   margin:0;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	            -ms-grid-row-align: center;
+	        align-items: center;
   position: relative;
   overflow: hidden;
 }
 
 .sketch1 {
 
-  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
   display:inline-block;
   -webkit-clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 20% 16%, 32% 58%, 44% 16%, 56% 28%);
           clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 20% 16%, 32% 58%, 44% 16%, 56% 28%);
@@ -115,12 +121,14 @@
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 
 .sketch1:hover > .vizzy, .sketch1:focus > .vizzy {
   opacity: 1;
-transform: scale(1.15);
+-webkit-transform: scale(1.15);
+        transform: scale(1.15);
 }
 
 
