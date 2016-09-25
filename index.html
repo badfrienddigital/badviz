@@ -9,6 +9,7 @@
     <meta name="author" content="BFD">
     <meta name="description" content="Music + Vision">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/clappr.min.js"></script>
     <link rel="stylesheet" href="css/tachyons.min.css">
     <link rel="stylesheet" href="css/vhs.css">
 
@@ -45,6 +46,21 @@
   }
 }
 
+.vid1-cont {
+  position: relative;
+  border: 0;
+  margin:0 auto;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.vid1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
 
 
 .cont1 {
@@ -107,8 +123,8 @@ margin-top: auto;
 }
 
 .sketch1:hover > .grad, .sketch1:focus > .grad {
--webkit-animation: grad1 1.5s ease-in-out 0.5s infinite;
-animation: grad12 1.5s ease-in-out 0.5s infinite;
+-webkit-animation: grad1 1s ease-in-out 0.5s infinite;
+animation: grad12 1s ease-in-out 0.5s infinite;
 
 }
 
@@ -173,8 +189,24 @@ animation: grad12 1.5s ease-in-out 0.5s infinite;
 <p class="f4 f3-ns measure lh-copy">Get customized, interactive visuals all in one box.<br>
 Simple to use, stable, and built specifically for your project.<br><br><br>
 
-<a name="Examples"></a><strong>Check it out:</strong><br>
-[...]<br>
+<a name="Examples"></a><strong>Check it out:</strong><br></p>
+<div class="vid1-cont" id="parent2">
+<div id="player" class="vid1"></div></div>
+  <script>
+  var dwidth = document.getElementById("parent2").offsetWidth;
+  var dheight = document.getElementById("parent2").offsetHeight;
+  console.log(Number(dwidth));
+  console.log(Number(dheight));
+
+    var playerr = new Clappr.Player({source: "assets/sunnexxx1.mp4",
+    preload: 'auto',
+    autoPlay: false,
+    parentId: "#player",
+    width:Number(dwidth),
+    height:Number(dheight),
+  });
+  </script>
+<p class="f4 f3-ns measure lh-copy"><br>
 narrative visuals that respond to your music.<br>
 [...]<br>
 a simple video player for your own videos.<br>
@@ -226,5 +258,18 @@ Let's make it happen. (E-mail us.)</p>
   </div>
 </nav>
 
+<script>
+function resizer() {
+  var dwidth = document.getElementById("parent2").offsetWidth;
+  var dheight = document.getElementById("parent2").offsetHeight;
+  console.log("new" + Number(dwidth));
+  console.log("new" + Number(dheight));
+  playerr.resize({
+    width:Number(dwidth),
+    height:Number(dheight),
+});
+}
+window.onresize = resizer;
+</script>
   </body>
 </html>
