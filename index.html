@@ -63,8 +63,8 @@ margin-top: auto;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
 
-  -webkit-clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 31% 16%, 31.5% 25%, 32% 16%, 56% 28%);
-        /*   clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 31% 16%, 31.5% 25%, 32% 16%, 56% 28%); */
+  -webkit-clip-path: polygon(62% 32%, 2% 32%, 7% 21%, 30% 18%, 31.5% 25%, 33% 18%, 56% 21%);
+        /*   clip-path: polygon(62% 32%, 2% 32%, 7% 21%, 30% 18%, 31.5% 25%, 33% 18%, 56% 21%); */
         /*-webkit-clip-path: url("#wavy11");*/
           clip-path: url("#wavy11");
 
@@ -83,11 +83,11 @@ margin-top: auto;
 }
 
 .sketch1:hover, .sketch1:focus {
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
+
   -webkit-clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);
           /*clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);*/
-          background: #00449e;
+          /*background: #00449e;*/
+          background: #BC0F1D;
         -webkit-transition: all 1s ease;
         transition: all 1s ease;
 }
@@ -99,7 +99,8 @@ margin-top: auto;
   left:0;
   top:auto;
   opacity: 0;
-  background: linear-gradient(180deg, #00449e, #96ccff, #ffffff);
+  background: linear-gradient(180deg, #ff6300, #ffde37, #fbf1a9);
+/*  background: linear-gradient(180deg, #00449e, #96ccff, #ffffff);*/
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 
@@ -160,9 +161,9 @@ animation: grad12 1.5s ease-in-out 0.5s infinite;
           <svg class="clip-svg">
               <defs>
                   <clipPath id="wavy11" clipPathUnits="objectBoundingBox">
-                      <polygon id="wavy1" points=".62 .32, .02 .32, .08 .28, .31 .16, .315 .25, .32 .16, .56 .28" />
+                      <polygon id="wavy1" points=".62 .32, .02 .32, .07 .21, .30 .18, .315 .25, .33 .18, .56 .21" />
                        <animate id="brk" xlink:href="#wavy1" begin="sketch11.click" attributeName="points" to=".62 .32, .02 .32, .08 .28, .10 .16, .32 .58, .54 .16, .56 .28" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
-                     <animate xlink:href="#wavy1" begin="brk.end + 3s" attributeName="points" to=".62 .32, .02 .32, .08 .28, .31 .16, .315 .25, .32 .16, .56 .28" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                     <animate xlink:href="#wavy1" begin="brk.end + 3s" attributeName="points" to=".62 .32, .02 .32, .07 .21, .30 .18, .315 .25, .33 .18, .56 .21" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
                   </clipPath>
               </defs>
           </svg>
