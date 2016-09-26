@@ -186,62 +186,74 @@ animation: grad12 1s ease-in-out 0.5s infinite;
         </div>
         </div>
        </div>
-<p class="f4 f3-ns measure lh-copy">Get customized, interactive visuals all in one box.<br>
-Simple to use, stable, and built specifically for your project.<br><br><br>
+<p class="f4 f3-ns measure lh-copy">Create visuals live, without all the fuss.
+  <br>Bad Viz is your personal video engineer,
+  <br>it's compact and ready for the road.<br></p>
 
-<a name="Examples"></a><strong>Check it out:</strong><br></p>
-<div class="vid1-cont" id="parent2">
-<div id="player" class="vid1"></div></div>
+<p class="f4 f3-ns measure lh-copy">
+<a name="Examples"></a><strong>Take a look:</strong><br></p>
+<div class="vid1-cont" id="parent1">
+<div id="player1" class="vid1"></div></div>
   <script>
-  var dwidth = document.getElementById("parent2").offsetWidth;
-  var dheight = document.getElementById("parent2").offsetHeight;
-  console.log(Number(dwidth));
-  console.log(Number(dheight));
+  var dwidth = document.getElementById("parent1").offsetWidth;
+  var dheight = document.getElementById("parent1").offsetHeight;
 
     var playerr = new Clappr.Player({source: "assets/sunnexxx1.mp4",
     preload: 'auto',
     autoPlay: false,
-    parentId: "#player",
+    parentId: "#player1",
     width:Number(dwidth),
     height:Number(dheight),
   });
   </script>
-<p class="f4 f3-ns measure lh-copy"><br>
-narrative visuals that respond to your music.<br>
-[...]<br>
-a simple video player for your own videos.<br>
-[...]<br>
-video that responds to your music.<br>
-[...]<br><br>
+<p class="f4 f3-ns measure lh-copy">
+  Custom animations that react to your music.<br><br></p>
+
+<div class="vid1-cont" id="parent2">
+<div id="player2" class="vid1"></div></div>
+  <script>
+  var d2width = document.getElementById("parent2").offsetWidth;
+  var d2height = document.getElementById("parent2").offsetHeight;
+
+    var playerr2 = new Clappr.Player({source: "assets/videact1.mp4",
+    preload: 'auto',
+    autoPlay: false,
+    parentId: "#player2",
+    width:Number(d2width),
+    height:Number(d2height),
+  });
+  </script>
+<p class="f4 f3-ns measure lh-copy">
+  Video effects controlled by your voice.<br>
+<br><br>
 
 <a name="FAQ"></a><strong>How Does It Work?</strong><br>
 <br>
 Audio goes in. Video goes out.<br>
-(If you want it, audio can go out too.)<br>
+(Audio goes out too.)<br>
 <br>
-[diagram]<br>
-<br>
-Audio input and output jacks are RCA (adapters for XLR or instrument cables are available).<br>
-<br>
-Video output is HDMI (adapters for other video formats are available as well).<br>
-<br>
+The software is written in a creative coding language called Processing.
+<br><br>
+The hardware is based on a powerful microcomputer called Raspberry Pi.
+<br><br>
 <strong>How Do I Operate It?</strong><br>
 <br>
-The device itself simply turns on and off, and it includes knobs to adjust the input and output volumes.<br>
+The device turns on and off with a power switch.
+<br>It has two knobs that adjust the audio input and output volumes.<br>
 <br>
-The program it runs can work with a standard USB keyboard, a MIDI device, an X Box controller, or any number of custom options--including wireless possibilities!<br>
+You can play, pause, and switch between programs using a USB keyboard, a MIDI device, an X-Box control pad, or just about anything else.<br>
 <br>
 <strong>Where Can I Learn More?</strong><br>
 <br>
-[resources, source code, and links to hardware/software]<br>
+[resources, source code, links to relevant hardware/software]<br>
 <br>
-<strong>So, I Can Just Make All This Myself?</strong><br>
+<strong>Can't I Just Make This Stuff Myself?</strong><br>
 <br>
 Sure!<br>
 <br>
-Every component is open source. If you have the spare time and the desire to code, go for it!<br>
+Every component is open source; if you've got the time and the skills, there's nothing stopping you.<br>
 <br>
-If not, BFD provides visual programming, artistic collaboration, and technical support. Mostly, we just want to make cool stuff together.<br>
+If typing code is not your thing, we're happy to help. BFD provides programming, artistic collaboration, and technical support. Plus, we really like building cool stuff.<br>
 <br>
 <a name="Contact"></a><strong>I Want One!</strong><br>
 <br>
@@ -260,13 +272,17 @@ Let's make it happen. (E-mail us.)</p>
 
 <script>
 function resizer() {
-  var dwidth = document.getElementById("parent2").offsetWidth;
-  var dheight = document.getElementById("parent2").offsetHeight;
-  console.log("new" + Number(dwidth));
-  console.log("new" + Number(dheight));
+  var dwidth = document.getElementById("parent1").offsetWidth;
+  var dheight = document.getElementById("parent1").offsetHeight;
+  var d2width = document.getElementById("parent2").offsetWidth;
+  var d2height = document.getElementById("parent2").offsetHeight;
   playerr.resize({
     width:Number(dwidth),
     height:Number(dheight),
+});
+playerr2.resize({
+  width:Number(d2width),
+  height:Number(d2height),
 });
 }
 window.onresize = resizer;
