@@ -1,0 +1,26 @@
+centering yr shapez?
+
+--
+
+just add
+  margin: 0 auto;
+
+--
+
+OUTER
+.clip-wrap {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+
+
+INNER
+.clip-each {
+  width: 180px;
+  height: 180px;
+  position: relative;
+}
+
+
+

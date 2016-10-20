@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>
-      BAD VIZ
+      VIZBOX
     </title>
     <meta name="author" content="BFD">
     <meta name="description" content="Music + Vision">
@@ -15,6 +15,9 @@
 
 
   </head>
+
+      <!-- livereload ~/badviz -p 8000 -->
+
 <style>
 
 @media only screen and (min-width: 60em) {
@@ -79,7 +82,7 @@ margin-top: auto;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
 
-  -webkit-clip-path: polygon(62% 32%, 2% 32%, 7% 21%, 30% 18%, 31.5% 25%, 33% 18%, 56% 21%);
+  -webkit-clip-path: polygon(54% 16%, 32% 16%, 10% 16%, 10% 40%, 10% 62%, 32% 62%, 54% 62%, 54% 40%);
         /*   clip-path: polygon(62% 32%, 2% 32%, 7% 21%, 30% 18%, 31.5% 25%, 33% 18%, 56% 21%); */
         /*-webkit-clip-path: url("#wavy11");*/
           clip-path: url("#wavy11");
@@ -87,8 +90,8 @@ margin-top: auto;
 
   background: #333;
   background-image: #333;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all .8s ease;
+  transition: all .8s ease;
 
       overflow: hidden;
       padding: 0;
@@ -100,12 +103,12 @@ margin-top: auto;
 
 .sketch1:hover, .sketch1:focus {
 
-  -webkit-clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);
+  -webkit-clip-path: polygon(54% 16%, 10% 16%, 32% 50%, 27% 50%, 27% 60%, 37% 60%, 37% 50%, 32% 50%);
           /*clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);*/
           /*background: #00449e;*/
           background: #BC0F1D;
-        -webkit-transition: all 1s ease;
-        transition: all 1s ease;
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease;
 }
 
 .grad {
@@ -150,6 +153,12 @@ animation: grad12 1s ease-in-out 0.5s infinite;
       50% {opacity:.7}
   }*/
 
+img{
+  margin: auto;
+  filter: contrast(115%);;
+
+}
+
 
 </style>
   <body class="dark-gray bg-light-yellow">
@@ -165,10 +174,10 @@ animation: grad12 1s ease-in-out 0.5s infinite;
 
     <article class="cf ph3 pa2 pv2 pa1-ns ph5-ns pb5-ns">
   <header class="fn fl-ns w-50-ns pr4-ns">
-      <!-- livereload ~/badviz -p 8000 -->
+
         <a name="BV"></a>
-        <h1 class="f1 f-headline-ns mb2 tracked"><span class="vhs-flicker vhs-delay-3">BAD</span> <span class="tracked-mega">VIZ</span></h1>
-        <h2 class="f4 f3-ns measure measure-narrow-m pl3-ns lh-copy">Self-Contained. <span class="break-l">Open-Source. </span><span class="break-m break-l">All-You.</span></h2>
+        <h1 class="f1 f-headline-ns mb2 tracked"><span class="vhs-flicker vhs-delay-3 tracked-mega">VIZ</span> <br><span class="tracked-tight">BOX</span></h1>
+<!-- place LEFT HAND content inside header, apparently.-->
   </header>
   <div class="fn fl-ns w-50-ns pt1-ns mt3-ns">
         <div id="cont11" class="cont1">
@@ -177,9 +186,12 @@ animation: grad12 1s ease-in-out 0.5s infinite;
           <svg class="clip-svg">
               <defs>
                   <clipPath id="wavy11" clipPathUnits="objectBoundingBox">
-                      <polygon id="wavy1" points=".62 .32, .02 .32, .07 .21, .30 .18, .315 .25, .33 .18, .56 .21" />
-                       <animate id="brk" xlink:href="#wavy1" begin="sketch11.click" attributeName="points" to=".62 .32, .02 .32, .08 .28, .10 .16, .32 .58, .54 .16, .56 .28" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
-                     <animate xlink:href="#wavy1" begin="brk.end + 3s" attributeName="points" to=".62 .32, .02 .32, .07 .21, .30 .18, .315 .25, .33 .18, .56 .21" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                      <!--<polygon id="wavy1" points=".62 .32, .02 .32, .07 .21, .30 .18, .315 .25, .33 .18, .56 .21" />
+                      <animate id="brk" xlink:href="#wavy1" begin="sketch11.click" attributeName="points" to=".62 .32, .02 .32, .08 .28, .10 .16, .32 .58, .54 .16, .56 .28" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                      <animate xlink:href="#wavy1" begin="brk.end + 3s" attributeName="points" to=".62 .32, .02 .32, .07 .21, .30 .18, .315 .25, .33 .18, .56 .21" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>-->
+                       <polygon id="wavy1" points=".54 .16, .32 .16, .10 .16, .10 .40, .10 .62, .32 .62, .54 .62, .54 .40" />
+                       <animate id="brk" xlink:href="#wavy1" begin="sketch11.click" attributeName="points" to=".54 .16, .10 .16, .32 .50, .27 .50, .27 .60, .37 .60, .37 .50, .32 .50" dur="500ms" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                     <animate xlink:href="#wavy1" begin="brk.end + 3s" attributeName="points" to=".54 .16, .54 .16, .10 .16, .10 .16, .10 .62, .10 .62, .54 .62, .54 .62" dur="800ms" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
                   </clipPath>
               </defs>
           </svg>
@@ -187,7 +199,7 @@ animation: grad12 1s ease-in-out 0.5s infinite;
         </div>
        </div>
 <p class="f4 f3-ns measure lh-copy">Create visuals live, without all the fuss.
-  <br>Bad Viz is your personal video engineer,
+  <br>VIZBOX is your personal video engineer,
   <br>it's compact and ready for the road.<br></p>
 
 <p class="f4 f3-ns measure lh-copy">
@@ -230,7 +242,7 @@ animation: grad12 1s ease-in-out 0.5s infinite;
 <a name="FAQ"></a><strong>How Does It Work?</strong><br>
 <br>
 Audio goes in. Video goes out.<br>
-(Audio goes out too.)<br>
+(Audio out is optional.)<br>
 <br>
 The software is written in a creative coding language called Processing.
 <br><br>
@@ -245,7 +257,7 @@ You can play, pause, and switch between programs using a USB keyboard, a MIDI de
 <br>
 <strong>Can I Use My Own Music Videos?</strong><br>
 <br>
-Bad Viz can play any standard video file. If you want to play along with the sick vids you've already got, we'll put 'em in a compact, easy-to-use package.<br>
+VIZBOX can play any standard video file. If you want to play along with the sick vids you've already got, we'll put 'em in a compact, easy-to-use package.<br>
 <br>
 Alternately, we can chop, loop, and manipulate your existing visuals,
 so they're more flexible and responsive in a live situation.

@@ -1,0 +1,96 @@
+var cable2 = new Path();
+cable2.strokeColor = '#333';
+cable2.add(new Point(275, 100)); 
+cable2.add(new Point(326, 50)); 
+cable2.strokeWidth = '3';
+
+var cable3 = new Path();
+cable3.strokeColor = '#333';
+cable3.add(new Point(275, 100)); 
+cable3.add(new Point(326, 150)); 
+cable3.dashArray = [8, 3];
+cable3.strokeWidth = '3';
+
+var softRectangle = new Rectangle(new Point(50, 50), new Point(150, 100));
+var cornerSize = new Size(20, 20);
+var path = new Path.RoundRectangle(softRectangle, cornerSize);
+path.strokeColor = '#333';
+path.fillColor = '#9eebcf';
+path.strokeWidth = '2';
+
+var wire = new Symbol(path);
+wire.place(new Point(75, 100));
+wire.place(new Point(375, 50));
+wire.place(new Point(375, 150));
+
+var cable1 = new Path();
+cable1.strokeColor = '#333';
+cable1.add(new Point(125, 100)); 
+cable1.add(new Point(175, 100)); 
+cable1.strokeWidth = '3';
+
+var vizbox = new Rectangle(new Point(175, 50), new Point(275, 150));
+var vizpath = new Path.Rectangle(vizbox);
+vizpath.strokeColor = '#333';
+vizpath.fillColor = '#00449e';
+vizpath.strokeWidth = '2';
+
+var cable4 = new Path();
+cable4.strokeColor = '#333';
+cable4.add(new Point(425, 150)); 
+cable4.add(new Point(465, 150)); 
+cable4.dashArray = [8, 3];
+cable4.strokeWidth = '3';
+
+var cable5 = new Path();
+cable5.strokeColor = '#333';
+cable5.add(new Point(425, 50)); 
+cable5.add(new Point(465, 50)); 
+cable5.strokeWidth = '3';
+
+var circ = new Path.Circle(new Point(100, 70), 40);
+circ.strokeColor = '#333';
+circ.scale(1.5, 1);
+circ.fillColor = '#96ccff';
+circ.strokeWidth = '2';
+
+var dest = new Symbol(circ);
+dest.place(new Point(525, 50));
+dest.place(new Point(525, 150));
+
+var text1 = new PointText(new Point(75, 105));
+text1.fillColor = '#333';
+text1.justification = 'center';
+text1.content = 'Audio Cable';
+text1.fontSize = '14';
+
+var text2 = new PointText(new Point(225, 108));
+text2.justification = 'center';
+text2.content = 'VIZBOX';
+text2.fontSize = '24';
+text2.fillColor = '#fbf1a9';
+text2.strokeWidth = '0';
+
+var text3 = new PointText(new Point(375, 55));
+text3.fillColor = '#333';
+text3.justification = 'center';
+text3.content = 'Video Cable';
+text3.fontSize = '14';
+
+var text4 = new PointText(new Point(375, 155));
+text4.fillColor = '#333';
+text4.justification = 'center';
+text4.content = 'Audio Cable';
+text4.fontSize = '14';
+
+var text5 = new PointText(new Point(525, 54));
+text5.fillColor = '#333';
+text5.justification = 'center';
+text5.content = 'Projector';
+text5.fontSize = '15';
+
+var text6 = new PointText(new Point(525, 154));
+text6.fillColor = '#333';
+text6.justification = 'center';
+text6.content = 'Sound Board';
+text6.fontSize = '15';

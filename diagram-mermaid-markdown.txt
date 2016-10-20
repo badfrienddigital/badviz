@@ -1,0 +1,21 @@
+graph LR
+
+         5[Projector]
+         6[SoundBoard]
+         3(Video Cable) 
+         4(Audio Cable)
+         2[VIZ BOX]
+         1(Audio Cable)
+
+         1==>2
+         2==>3
+         2==>4
+         3==>5
+         4==>6
+
+style 1 fill:#9eebcf,stroke-width:0px;
+style 3 fill:#9eebcf,stroke-width:0px;
+style 4 fill:#9eebcf,stroke-width:0px;
+style 2 fill:#ff80cc,stroke:#ff80cc ,stroke-width:10px;
+style 5 fill:#96ccff,stroke:#96ccff,stroke-width:2px;
+style 6 fill:#96ccff,stroke:#96ccff,stroke-width:2px;
