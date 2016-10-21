@@ -26,9 +26,17 @@
 
 @media only screen and (min-width: 60em) {
 .sketch1{
-  /*margin-left: 8.5vw;*/
+
   width: 38vw;
   height: 38vw;
+  /* to center it, margin-left = 50% - (sketch1width * .44)/2
+  margin-left = 50% - (38vw * .44)/2
+  margin-left = 50% - (16.72)/2
+  margin-left = 50% - 8.36
+  margin-left = 41.64
+*/
+  margin-left: 25%;
+
 }
 }
 @media only screen and (min-width: 30em) and (max-width: 60em) {
@@ -36,6 +44,14 @@
   .sketch1{
     width: 50vw;
     height: 50vw;
+    /* to center it, margin-left = 50vw - (sketch1width * .44)/2
+    margin-left = 50vw - (50vw * .44)/2
+    margin-left = 50vw - (22)/2
+    margin-left = 50vw - 11
+    margin-left = 39vw
+    */
+    margin-left: 25%;
+
   }
   .break-l {
     display:table;
@@ -47,6 +63,15 @@
   .sketch1{
     width: 80vw;
     height: 80vw;
+
+    /* ACTUAL sketch takes up 44% of sketch1 div width
+    thus, to center it, margin-left = 50vw - (sketch1width * .44)/2
+    margin-left = 50vw - (80vw * .44)/2
+    margin-left = 50vw - (35.2)/2
+    margin-left = 50vw - 17.6
+    margin-left = 32.4vw
+    (it might be better to use % instead of vw because of iOS) */
+    margin-left: 31vw;
   }
   .break-m {
     display:table;
@@ -74,19 +99,23 @@
   padding: 0;
   border: 0;
   margin:0 auto;
+  /*
   display:table;
+    width: 100%;
+*/
   overflow: hidden;
   position:relative;
-  width: 100%;
+
 }
 
+
+
 .sketch1 {
-margin-left: auto;
 margin-top: auto;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
 
-  -webkit-clip-path: polygon(54% 16%, 32% 16%, 10% 16%, 10% 40%, 10% 62%, 32% 62%, 54% 62%, 54% 40%);
+  -webkit-clip-path: polygon(44% 16%, 22% 16%, 0% 16%, 0% 40%, 0% 62%, 22% 62%, 44% 62%, 44% 40%);
         /*   clip-path: polygon(62% 32%, 2% 32%, 7% 21%, 30% 18%, 31.5% 25%, 33% 18%, 56% 21%); */
         /*-webkit-clip-path: url("#wavy11");*/
           clip-path: url("#wavy11");
@@ -96,18 +125,18 @@ margin-top: auto;
   background-image: #333;
   -webkit-transition: all .8s ease;
   transition: all .8s ease;
-
-      overflow: hidden;
+  overflow: hidden;
       padding: 0;
       border: 0;
       margin-top: 0;
       margin-bottom:-15vw;
+      display: block;
 
 }
 
 .sketch1:hover, .sketch1:focus {
 
-  -webkit-clip-path: polygon(54% 16%, 10% 16%, 32% 50%, 27% 50%, 27% 60%, 37% 60%, 37% 50%, 32% 50%);
+  -webkit-clip-path: polygon(44% 16%, 0% 16%, 22% 50%, 17% 50%, 17% 60%, 27% 60%, 27% 50%, 22% 50%);
           /*clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);*/
           /*background: #00449e;*/
           background: #BC0F1D;
@@ -116,7 +145,7 @@ margin-top: auto;
 }
 
 .grad {
-  position: absolute;
+/*  position: absolute; */
   margin-top: inherit;
   height: inherit;
   left:0;
@@ -124,8 +153,8 @@ margin-top: auto;
   opacity: 0;
   background: linear-gradient(180deg, #ff6300, #ffde37, #fbf1a9);
 /*  background: linear-gradient(180deg, #00449e, #96ccff, #ffffff);*/
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 
 }
 
@@ -162,30 +191,44 @@ img{
   filter: contrast(115%);;
 
 }
+.scrn {
+width:100vw;
+}
+.maxxx {
+  max-width:100%;
+}
+.illyb {
+display: inline-block;
+}
+html {
+  width:100vw;
+}
 
 
 </style>
-  <body class="dark-gray bg-light-yellow">
-  <nav class="f6 f5-ns f5-l fw6 bg-dark-gray ttu tracked dt w-100 border-box pa3 ph5-ns">
-    <span class="dtc v-mid w-0 w-25-ns br-100"> </span>
-    <div class="dtc v-mid w-100 w-75-ns tr">
-    <a class="link dim light-yellow dib mr3" href="#BV" title="BV">BV</a>
+  <body class="dark-gray scrn bg-light-yellow">
+  <nav class="f6 maxxx w-100 f5-ns f5-l fw6 bg-dark-gray ttu tracked dt border-box ns-pa3 pv3 ph1 ph4-ns">
+    <span class="dtc v-mid w-0 w-25-ns br-100"></span>
+    <div class="dtc v-mid scrn w-75-ns tr">
+    <a class="link dim light-yellow dib mr3" href="#VB" title="VB">VB</a>
     <a class="link dim light-yellow dib mr3" href="#Examples" title="Examples">Examples</a>
     <a class="link dim light-yellow dib mr3" href="#FAQ" title="FAQ">FAQ</a>
     <a class="link dim light-yellow dib" href="#Contact" title="Contact">Contact</a>
     </div>
   </nav>
 
-    <article class="cf ph3 pa2 pv2 pa1-ns ph5-ns pb5-ns">
-  <header class="fn fl-ns w-50-ns pr4-ns">
-
-        <a name="BV"></a>
-        <h1 class="f1 f-headline-ns mb2 tracked"><span class="vhs-flicker vhs-delay-3 tracked-mega">VIZ</span> <br><span class="tracked-tight">BOX</span></h1>
+<!-- pa2    -->
+  <!--  <article class="cf ph3 pv2 pa1-ns ph5-ns pb5-ns"> -->
+  <header class="fl-ns w-100 w-50-ns">
+        <a name="VB"></a>
+      <div class="tc" id="titlebox">
+        <h1 class="f1 illyb tl f-headline-ns measure-narrow mb2"><span class="vhs-flicker vhs-delay-3 tracked-mega">VIZ</span><br><span class="tracked-tight">BOX</span></h1>
+      </div>
 <!-- place LEFT HAND content inside header, apparently.-->
   </header>
-  <div class="fn fl-ns w-50-ns pt1-ns mt3-ns">
-        <div id="cont11" class="cont1">
-        <div id="sketch11" class="sketch1">
+  <div class="fl-ns w-100 w-50-ns">
+        <div id="cont11" class="cont1 tc">
+        <div id="sketch11" class="sketch1 tl">
           <div class="grad">
           <svg class="clip-svg">
               <defs>
@@ -193,9 +236,9 @@ img{
                       <!--<polygon id="wavy1" points=".62 .32, .02 .32, .07 .21, .30 .18, .315 .25, .33 .18, .56 .21" />
                       <animate id="brk" xlink:href="#wavy1" begin="sketch11.click" attributeName="points" to=".62 .32, .02 .32, .08 .28, .10 .16, .32 .58, .54 .16, .56 .28" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
                       <animate xlink:href="#wavy1" begin="brk.end + 3s" attributeName="points" to=".62 .32, .02 .32, .07 .21, .30 .18, .315 .25, .33 .18, .56 .21" dur="1s" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>-->
-                       <polygon id="wavy1" points=".54 .16, .32 .16, .10 .16, .10 .40, .10 .62, .32 .62, .54 .62, .54 .40" />
-                       <animate id="brk" xlink:href="#wavy1" begin="sketch11.click" attributeName="points" to=".54 .16, .10 .16, .32 .50, .27 .50, .27 .60, .37 .60, .37 .50, .32 .50" dur="500ms" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
-                     <animate xlink:href="#wavy1" begin="brk.end + 3s" attributeName="points" to=".54 .16, .54 .16, .10 .16, .10 .16, .10 .62, .10 .62, .54 .62, .54 .62" dur="800ms" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                       <polygon id="wavy1" points=".44 .16, .22 .16, .0 .16, .0 .40, .0 .62, .22 .62, .44 .62, .44 .40" />
+                       <animate id="brk" xlink:href="#wavy1" begin="sketch11.click" attributeName="points" to=".44 .16, .0 .16, .22 .50, .17 .50, .17 .60, .27 .60, .27 .50, .22 .50" dur="500ms" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                     <animate xlink:href="#wavy1" begin="brk.end + 3s" attributeName="points" to=".44 .16, .22 .16, .0 .16, .0 .40, .0 .62, .22 .62, .44 .62, .44 .40" dur="800ms" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
                   </clipPath>
               </defs>
           </svg>
@@ -266,7 +309,7 @@ VIZBOX can play any standard video file. If you want to play along with the sick
 Alternately, we can chop, loop, and manipulate your existing visuals,
 so they're more flexible and responsive in a live situation.
 <br><br>
-<strong>Will It Work With A DMX Controller/Drum Trigger/Biofeedback/Fog Machine/Laser Show?</strong><br>
+<strong>Will It Work With A DMX Controller, Drum Trigger, Biofeedback, Fog Machine, Laser Show?</strong><br>
 <br>
 Hoo boy, now you're talkin'!<br>
 <br>
@@ -291,10 +334,11 @@ If typing code is not your thing, we're happy to help. BFD provides programming,
 <br>
 Let's make it happen. (E-mail us.)</p>
 </div>
-</article>
-<nav class="f6 f5-ns f5-l fw6 bg-dark-gray ttu tracked dt w-100 border-box pa3 ph5-ns">
-  <div class="dtc v-mid w-100 w-25-ns tl">
-  <a class="link dim light-yellow dib mr3" href="#BV" title="BV">BV</a>
+
+<!--</article>-->
+<nav class="f6 f5-ns w-100 f5-l fw6 bg-dark-gray ttu tracked dt maxxx border-box pa3 ph4-ns">
+  <div class="dtc v-mid scrn w-25-ns tl">
+  <a class="link dim light-yellow dib mr3" href="#VB" title="VB">VB</a>
   <a class="link dim light-yellow dib mr3" href="#Examples" title="Examples">Examples</a>
   <a class="link dim light-yellow dib mr3" href="#FAQ" title="FAQ">FAQ</a>
   <a class="link dim light-yellow dib" href="#Contact" title="Contact">Contact</a>
