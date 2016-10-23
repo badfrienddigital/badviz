@@ -1,0 +1,23 @@
+VW: 0 - 1213
+total: 1213
+half: 606.5
+center: 606.5
+l.half.center: 303.25
+r.half.center: 909.75
+
+colW: 608 - 1213
+total: 605
+half: 302.5
+center: 910.5
+
+sqW: 819 - 1023
+total: 204
+half: 102
+center: 921
+
+--------
+
+W: 1762
+
+1321.5
+440.5
