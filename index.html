@@ -116,8 +116,8 @@
 
 .sketch1 {
 margin-top: auto;
-  -webkit-transform: translateZ(0);;
-          transform: translateZ(0);;
+  -webkit-transform: translateZ(0%);;
+          transform: translateZ(0%);;
 
   -webkit-clip-path: polygon(44% 16%, 22% 16%, 0% 16%, 0% 40%, 0% 62%, 22% 62%, 44% 62%, 44% 40%);
         /*   clip-path: polygon(62% 32%, 2% 32%, 7% 21%, 30% 18%, 31.5% 25%, 33% 18%, 56% 21%); */
@@ -195,7 +195,9 @@ margin-top: auto;
 */
 
 .sketch1:hover, .sketch1:focus {
-
+  transform: translateZ(0%);;
+-webkit-transform: translateZ(0%);;
+-webkit-backface-visibility: hidden;
   -webkit-clip-path: polygon(44% 16%, 0% 16%, 22% 50%, 17% 50%, 17% 60%, 27% 60%, 27% 50%, 22% 50%);
           /*clip-path: polygon(62% 32%, 2% 32%, 8% 28%, 10% 16%, 32% 58%, 54% 16%, 56% 28%);*/
           /*background: #00449e;*/
@@ -206,7 +208,9 @@ margin-top: auto;
 
 .grad {
 /*  position: absolute; */
-  -webkit-transform: translateZ(0);;
+          transform: translateZ(0%);
+  -webkit-transform: translateZ(0%);
+  -webkit-backface-visibility: hidden;
   margin-top: inherit;
   height: inherit;
   left:0;
@@ -221,6 +225,10 @@ margin-top: auto;
 }
 
 .sketch1:hover > .grad, .sketch1:focus > .grad {
+  transform: translateZ(0%);;
+-webkit-transform: translateZ(0%);;
+-webkit-backface-visibility: hidden;
+
 -webkit-animation: grad1 1s ease-in-out 0.5s infinite;
 animation: grad12 1s ease-in-out 0.5s infinite;
 
