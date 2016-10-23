@@ -21,23 +21,31 @@
   </head>
 
       <!-- livereload ~/badviz -p 8000 -->
+            <!-- ADD VW POLYFILL??????????????????? -->
 
 <style>
 
 @media only screen and (min-width: 60em) {
 .sketch1{
-
   width: 38vw;
   height: 38vw;
-  /* to center it, margin-left = 50% - (sketch1width * .44)/2
-  margin-left = 50% - (38vw * .44)/2
-  margin-left = 50% - (16.72)/2
-  margin-left = 50% - 8.36
-  margin-left = 41.64
+  /*
+  width of actual shape = 44% of its parent/viewport
+  to center it, use:
+  margin-left = columnSize/2 - (parentWidth * .44)/2
+  margin-left = (50vw)/2 - (38vw * .44)/2
+  margin-left = 25vw - (16.72)/2
+  margin-left = 25vw - 8.36vw
+  margin-left = 16.64vw
 */
-  margin-left: 4vw;
-
-
+margin-left: 16.64vw;
+}
+.cont1{
+      padding-bottom:25vw;
+}
+.grad{
+      width: 16.72vw;
+      margin-left: 0vw;
 }
 }
 @media only screen and (min-width: 30em) and (max-width: 60em) {
@@ -45,17 +53,31 @@
   .sketch1{
     width: 50vw;
     height: 50vw;
-    /* to center it, margin-left = 50vw - (sketch1width * .44)/2
-    margin-left = 50vw - (50vw * .44)/2
-    margin-left = 50vw - (22)/2
-    margin-left = 50vw - 11
-    margin-left = 39vw
+    /*
+    width of actual shape = 44% of its parent/viewport
+    to center it, use:
+    margin-left = columnSize/2 - (parentWidth * .44)/2
+    margin-left = (50vw)/2 - (50vw * .44)/2
+    margin-left = 25vw - (50vw * .44)/2
+    margin-left = 25vw - (22)/2
+    margin-left = 25vw - 11
+    margin-left = 14vw
     */
-
-
+    margin-left: 14vw;
   }
-  .break-l {
-    display:table;
+  .cont1{
+        padding-bottom:38vw;
+  }
+  .grad{
+        width: 22vw;
+        margin-left: 0vw;
+  }
+  .brukup {
+    width:25%;
+    margin-left: 12.5%;
+  }
+  .wuh {
+  width:10%;
   }
 }
 
@@ -65,19 +87,27 @@
     width: 80vw;
     height: 80vw;
 
-    /* ACTUAL sketch takes up 44% of sketch1 div width
-    thus, to center it, margin-left = 50vw - (sketch1width * .44)/2
+    /*
+    width of actual shape = 44% of its parent/viewport
+    to center it, use:
+    margin-left = columnSize/2 - (parentWidth * .44)/2
+    margin-left = (100vw)/2 - (80vw * .44)/2
     margin-left = 50vw - (80vw * .44)/2
     margin-left = 50vw - (35.2)/2
     margin-left = 50vw - 17.6
     margin-left = 32.4vw
-    (it might be better to use % instead of vw because of iOS) */
-    margin-left: 31vw;
+ */
+    margin-left: 32.4vw;
 
   }
-  .break-m {
-    display:table;
+  .cont1{
+        padding-bottom:60vw;
   }
+  .grad{
+        width: 35.2vw;
+        margin-left: 0vw;
+  }
+
 }
 
 .vid1-cont {
@@ -98,25 +128,17 @@
 
 
 .cont1 {
-  padding: 0;
   border: 0;
-  margin:0 auto;
   width:inherit;
-  /*
-  display:table;
-    width: 100%;
-*/
-  overflow: hidden;
   position:relative;
-
-
 }
 
-
+.ovhh{
+  overflow-x: hidden;
+}
 
 .sketch1 {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-margin-top: auto;
   -webkit-clip-path: polygon(44% 16%, 22% 16%, 0% 16%, 0% 40%, 0% 62%, 22% 62%, 44% 62%, 44% 40%);
         /*   clip-path: polygon(62% 32%, 2% 32%, 7% 21%, 30% 18%, 31.5% 25%, 33% 18%, 56% 21%); */
         /*-webkit-clip-path: url("#wavy11");*/
@@ -128,14 +150,15 @@ margin-top: auto;
   -webkit-transition: all .8s ease;
   transition: all .8s ease;
   overflow: hidden;
-      padding: 0;
+  padding:0;
       border: 0;
       margin-top: 0;
       margin-bottom:-15vw;
+  display:inline-block;
+  position:absolute;
 
       -webkit-animation: flicker1 4.5s ease-in-out  1.5s;
       animation: flicker12 4.5s ease-in-out  1.5s;
-
 }
 
 @-webkit-keyframes flicker1 {
@@ -203,29 +226,30 @@ margin-top: auto;
 }
 
 .grad {
-/*  position: absolute; */
 -webkit-tap-highlight-color: rgba(0,0,0,0);
           transform: translateZ(0%);
   -webkit-transform: translateZ(0%);
   margin-top: inherit;
   height: inherit;
-  left:0;
   top:auto;
+  display:inline-block;
+  position:absolute;
   opacity: 0;
-  width:inherit:
   background: linear-gradient(180deg, #ff6300, #ffde37, #fbf1a9);
 /*  background: linear-gradient(180deg, #00449e, #96ccff, #ffffff);*/
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-
 }
 
 .sketch1:hover > .grad, .sketch1:focus > .grad {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-
 -webkit-animation: grad1 1s ease-in-out 0.5s infinite;
 animation: grad12 1s ease-in-out 0.5s infinite;
+}
 
+.clip-svg {
+  width:inherit;
+    height: inherit;
 }
 
 
@@ -239,24 +263,10 @@ animation: grad12 1s ease-in-out 0.5s infinite;
       50% {opacity:1}
   }
 
-/*
-  @-webkit-keyframes rad1 {
-      0%, 100% {opacity:1}
-      50% {opacity:.7}
-  }
-
-  @keyframes rad12 {
-      0%, 100% {opacity:1}
-      50% {opacity:.7}
-  }*/
 
 img{
   margin: auto;
   filter: contrast(115%);;
-
-}
-.scrn {
-width:100vw;
 }
 .maxxx {
   max-width:100%;
@@ -264,16 +274,15 @@ width:100vw;
 .illyb {
 display: inline-block;
 }
-html {
-  width:100vw;
-}
+
+
 
 
 </style>
-  <body class="dark-gray scrn bg-light-yellow">
+  <body class="dark-gray bg-light-yellow">
   <nav class="f6 maxxx w-100 f5-ns f5-l fw6 bg-dark-gray ttu tracked dt border-box ns-pa3 pv3 ph1 ph4-ns">
-    <span class="dtc v-mid w-0 w-25-ns br-100"></span>
-    <div class="dtc v-mid scrn w-75-ns tr">
+    <span class="dtc v-mid w-0 wuh w-25-ns br-100"></span>
+    <div class="dtc v-mid w-100 w-75-ns tr">
     <a class="link dim light-yellow dib mr3" href="#VB" title="VB">VB</a>
     <a class="link dim light-yellow dib mr3" href="#Examples" title="Examples">Examples</a>
     <a class="link dim light-yellow dib mr3" href="#FAQ" title="FAQ">FAQ</a>
@@ -285,14 +294,14 @@ html {
   <!--  <article class="cf ph3 pv2 pa1-ns ph5-ns pb5-ns"> -->
   <header class="fl-ns w-100 w-50-ns">
         <a name="VB"></a>
-      <div class="tc" id="titlebox">
+      <div class="tc brukup" id="titlebox">
         <!-- vhs-flicker vhs-delay-1  -->
-        <h1 class="f1 illyb tl f-headline-ns measure-narrow mb2"><span class="tracked-mega">VIZ</span><br><span class="tracked-tight">BOX</span></h1>
+        <h1 class="f1 illyb tl f-headline-ns measure-narrow mb2"><span class="tracked-mega-ns tracked">VIZ</span> <span class="tracked-tight">BOX</span></h1>
       </div>
 <!-- place LEFT HAND content inside header, apparently.-->
   </header>
-  <div class="fl-ns w-100 w-50-ns">
-        <div id="cont11" class="cont1 tc">
+  <div class="fl-ns w-100 w-50-ns ovhh">
+        <div id="cont11" class="cont1">
         <div id="sketch11" class="sketch1 tl">
           <div class="grad">
           <svg class="clip-svg">
@@ -310,11 +319,11 @@ html {
         </div>
         </div>
        </div>
-<p class="f4 f3-ns measure lh-copy">Create visuals live, without all the fuss.
+<p class="f4 f3-ns measure lh-copy tc">Create visuals live, without all the fuss.
   <br>VIZBOX is your personal video engineer,
-  <br>it's compact and ready for the road.<br></p>
+  <br>it's compact and ready for the road.<br><br></p>
 
-<p class="f4 f3-ns measure lh-copy">
+<p class="f4 f3-ns measure lh-copy pl1">
 <a name="Examples"></a><strong>Take a look:</strong><br></p>
 <div class="vid1-cont" id="parent1">
 <div id="player1" class="vid1"></div></div>
@@ -330,7 +339,7 @@ html {
     height:Number(dheight),
   });
   </script>
-<p class="f4 f3-ns measure lh-copy">
+<p class="f4 f3-ns measure lh-copy pl1">
   Custom animations that react to your music.<br><br></p>
 
 <div class="vid1-cont" id="parent2">
@@ -347,7 +356,7 @@ html {
     height:Number(d2height),
   });
   </script>
-<p class="f4 f3-ns measure lh-copy">
+<p class="f4 f3-ns measure lh-copy pl1">
   Video effects controlled by your voice.<br>
 <br><br>
 
@@ -360,10 +369,9 @@ The software is written in a creative coding language called Processing.
 <br><br>
 The hardware is based on a powerful microcomputer called Raspberry Pi.
 <br><br>
-<strong>How Do I Operate It?</strong><br>
+<strong>How Do I Use It?</strong><br>
 <br>
-The device turns on and off with a power switch.
-<br>It has two knobs that adjust the audio input and output volumes.<br>
+The device turns on and off with a power switch. It has two knobs that adjust the audio input and output volumes.<br>
 <br>
 You can play, pause, and switch between programs using a USB keyboard, a MIDI device, an X-Box control pad, or just about anything else.<br>
 <br>
@@ -374,7 +382,7 @@ VIZBOX can play any standard video file. If you want to play along with the sick
 Alternately, we can chop, loop, and manipulate your existing visuals,
 so they're more flexible and responsive in a live situation.
 <br><br>
-<strong>Will It Work With A DMX Controller, Drum Trigger, Biofeedback, Fog Machine, Laser Show?</strong><br>
+<strong>Will It Work With A DMX Controller, Drum Trigger, Biofeedback, Fog Machine, and Laser Show?</strong><br>
 <br>
 Hoo boy, now you're talkin'!<br>
 <br>
@@ -402,12 +410,12 @@ Let's make it happen. (E-mail us.)</p>
 
 <!--</article>-->
 <nav class="f6 f5-ns w-100 f5-l fw6 bg-dark-gray ttu tracked dt maxxx border-box pa3 ph4-ns">
-  <div class="dtc v-mid scrn w-25-ns tl">
+  <div class="dtc v-mid w-100 w-25-ns tl">
   <a class="link dim light-yellow dib mr3" href="#VB" title="VB">VB</a>
   <a class="link dim light-yellow dib mr3" href="#Examples" title="Examples">Examples</a>
   <a class="link dim light-yellow dib mr3" href="#FAQ" title="FAQ">FAQ</a>
   <a class="link dim light-yellow dib" href="#Contact" title="Contact">Contact</a>
-    <span class="dtc v-mid w-0 w-75-ns br-100"> </span>
+    <span class="dtc v-mid w-0 w-75-ns wuh br-100"> </span>
   </div>
 </nav>
 
