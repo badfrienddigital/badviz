@@ -22,6 +22,7 @@
 
       <!-- livereload ~/badviz -p 8000 -->
             <!-- ADD VW POLYFILL??????????????????? -->
+            <!-- MOVE FIREFOX FILL ANIMATION FROM CSS TO SMIL/JS WITH MODERNIZR??????? -->
 
 <style>
 
@@ -44,8 +45,10 @@ margin-left: 16.64vw;
       padding-bottom:25vw;
 }
 .grad{
-      width: 16.72vw;
-      margin-left: 0vw;
+      width: 18vw;
+}
+.clip-svg{
+
 }
 }
 @media only screen and (min-width: 30em) and (max-width: 60em) {
@@ -69,8 +72,11 @@ margin-left: 16.64vw;
         padding-bottom:38vw;
   }
   .grad{
-        width: 22vw;
+        width: 24vw;
         margin-left: 0vw;
+  }
+  .clip-svg{
+
   }
   .brukup {
     width:25%;
@@ -104,8 +110,11 @@ margin-left: 16.64vw;
         padding-bottom:60vw;
   }
   .grad{
-        width: 35.2vw;
+        width: 37vw;
         margin-left: 0vw;
+  }
+  .clip-svg{
+
   }
 
 }
@@ -185,35 +194,24 @@ margin-left: 16.64vw;
     9% {transform: rotate(0.5deg) translate(0%, 1%);}
 }
 
-
-/*
-.sketch1::after{
+.grad:before{
   content: '';
-  opacity:0;
+  opacity: 0;
+  width: 200%;
+  height: 100%;
   position: absolute;
-  top: -50%;
-  right: -50%;
-  bottom: -50%;
-  left: -50%;
-  background: purple;
-  transform: translate(-60em, 0em);
-
+  top: 50%;
+  background-color: #BC0F1D;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
-@-webkit-keyframes flicker1 {
-    0%  {  opacity:1;}
-    50% {  opacity:.8;}
-    70% {opacity:.3;}
-    80% {opacity:0; transform: translate(30em, 0em)}
+.sketch1:hover > .grad:before, .sketch1:focus > .grad:before{
+  opacity:1;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
-@keyframes flicker12 {
-    0% {  opacity:1;}
-    50% { opacity:.8;}
-    70% {opacity:.3;}
-    80% {opacity:0; transform: translate(30em, 0em);}
-}
-*/
 
 .sketch1:hover, .sketch1:focus {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -230,6 +228,7 @@ margin-left: 16.64vw;
           transform: translateZ(0%);
   -webkit-transform: translateZ(0%);
   margin-top: inherit;
+  margin-left: 0;
   height: inherit;
   top:auto;
   display:inline-block;
@@ -313,6 +312,7 @@ display: inline-block;
                        <polygon id="wavy1" points=".44 .16, .22 .16, .0 .16, .0 .40, .0 .62, .22 .62, .44 .62, .44 .40" />
                        <animate id="brk" xlink:href="#wavy1" begin="sketch11.click" attributeName="points" to=".44 .16, .0 .16, .22 .50, .17 .50, .17 .60, .27 .60, .27 .50, .22 .50" dur="500ms" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
                      <animate xlink:href="#wavy1" begin="brk.end + 3s" attributeName="points" to=".44 .16, .22 .16, .0 .16, .0 .40, .0 .62, .22 .62, .44 .62, .44 .40" dur="800ms" keyTimes="0; 1" keySplines=".42 0 1 1;" fill="freeze"/>
+                     <!-- begin="brk.end + 3s" -->
                   </clipPath>
               </defs>
           </svg>
