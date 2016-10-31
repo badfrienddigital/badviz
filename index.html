@@ -357,7 +357,23 @@ display: inline-block;
   });
   </script>
 <p class="f4 f3-ns measure lh-copy pl1">
-  Video effects controlled by your voice.<br>
+  Video effects controlled by your voice.<br><br></p>
+  <div class="vid1-cont" id="parent3">
+  <div id="player3" class="vid1"></div></div>
+    <script>
+    var dwidth = document.getElementById("parent3").offsetWidth;
+    var dheight = document.getElementById("parent3").offsetHeight;
+
+      var playerr = new Clappr.Player({source: "assets/pviz.mp4",
+      preload: 'auto',
+      autoPlay: false,
+      parentId: "#player3",
+      width:Number(d3width),
+      height:Number(d3height),
+    });
+    </script>
+  <p class="f4 f3-ns measure lh-copy pl1">
+    Control color with the pitch.<br>
 <br><br>
 
 <a name="FAQ"></a><strong>How Does It Work?</strong><br>
@@ -425,6 +441,8 @@ function resizer() {
   var dheight = document.getElementById("parent1").offsetHeight;
   var d2width = document.getElementById("parent2").offsetWidth;
   var d2height = document.getElementById("parent2").offsetHeight;
+  var d3width = document.getElementById("parent3").offsetWidth;
+  var d3height = document.getElementById("parent3").offsetHeight;
   playerr.resize({
     width:Number(dwidth),
     height:Number(dheight),
@@ -432,6 +450,10 @@ function resizer() {
 playerr2.resize({
   width:Number(d2width),
   height:Number(d2height),
+});
+playerr3.resize({
+  width:Number(d3width),
+  height:Number(d3height),
 });
 }
 window.onresize = resizer;
